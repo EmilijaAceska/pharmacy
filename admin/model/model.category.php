@@ -1,8 +1,9 @@
 <?php
 class ModelCategory extends DB{
   private $category_title="";
+  private $category_img="";
   private $table_name="category";
-  private $columns_name="category_title";
+  private $columns_name="category_title,category_img";
 
   //set-get
   public function setCategoryTitle($category_title){
@@ -11,10 +12,16 @@ class ModelCategory extends DB{
   public function getCategoryTitle(){
     return $this->categgory_title;
   }
+  public function setCategoryImg($category_img){
+    $this->category_img=$category_img;
+  }
+  public function getCategoryImg(){
+    return $this->categgory_img;
+  }
 
   //INSERT
   public function insertCategory(){
-    $columns_value="'$this->category_title'";
+    $columns_value="'$this->category_title','$this->category_img'";
     parent::insertRow($this->table_name,$this->columns_name,$columns_value);
   }
 
@@ -25,7 +32,7 @@ class ModelCategory extends DB{
 
   //UPDATE
   public function updateCategory(){
-    $columns="category_title='$this->category_title'";
+    $columns="category_title='$this->category_title',category_img='$this->category_img'";
     $condition="category_title='$this->category_title'";
     parent::updateRow($this->table_name,$columns,$condition);
   }
