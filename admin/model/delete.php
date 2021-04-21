@@ -22,7 +22,7 @@ switch ($table_name){
     $objProduct->setProductId($pk_value);
     $objProduct->deleteProduct();
   break;
-  case "contact":
+  case "contact_form":
     require_once "model.contact.php";
     $objContact= new ModelContact();
     $objContact->setContactId($pk_value);

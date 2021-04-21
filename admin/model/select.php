@@ -19,7 +19,7 @@ switch ($table_name) {
             $data["records"][]=array("subcategory_title"=>$row["subcategory_title"],"subcategory_img"=>$row["subcategory_img"]);
     }
   break;
-  case "product":
+  case "products":
     require_once "model.products.php";
     $objProduct= new ModelProducts();
     $result=$objProduct->selectProduct();
@@ -29,7 +29,7 @@ switch ($table_name) {
                                       "category_title"=>$row["category_title"],"subcategory_title"=>$row["subcategory_title"]);
     }
   break;
-  case "contact":
+  case "contact_form":
     require_once "model.contact.php";
     $objContact= new ModelContact();
     $result=$objContact->selectContact();
