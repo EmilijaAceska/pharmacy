@@ -18,9 +18,9 @@ switch($table_name){
     $objSubcategory= new ModelSubcategory();
     $subcategory_title=$data[0]->subcategory_title;
     $subcategory_img=$data[0]->subcategory_img;
-    $objSubcategory->setCategoryTitle($subcategory_title);
-    $objSubcategory->setCategoryImg($subcategory_img);
-    $objSubcategory->insertCategory();
+    $objSubcategory->setSubcategoryTitle($subcategory_title);
+    $objSubcategory->setSubcategoryImg($subcategory_img);
+    $objSubcategory->insertSubcategory();
   break;
   case "products":
     require_once "model.products.php";
@@ -39,6 +39,7 @@ switch($table_name){
     $objProduct->setProductImg($product_img);
     $objProduct->setCategoryTitle($category_title);
     $objProduct->setSubcategoryTitle($subcategory_title);
+    $objProduct->insertProduct();
   break;
   case "contact_form":
     require_once "model.contact.php";
@@ -55,6 +56,7 @@ switch($table_name){
     $objContact->setEmail($e_mail);
     $objContact->setAge($age);
     $objContact->setMessage($message);
+    $objContact->insertContact();
   break;
 }
 ?>
