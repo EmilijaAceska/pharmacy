@@ -6,23 +6,30 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <!--ANGULAR JS-->
+  <script src="../assets/js/angular.min.js"></script>
+  <script src="../assets/js/angular-route.js"></script>
+  <script src="assets/js/app.js"></script>
+  <script src="assets/js/routes.js"></script>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
   <nav>
     <ul>
-      <li><a href="view/category.html">Category</a></li>
-      <li><a href="view/category_details.html">New Category</a></li>
-      <li><a href="view/subcategory.html">Subcategory</a></li>
-      <li><a href="view/subcategory_details.html">New subcategory</a></li>
-      <li><a href="view/products.html">Products</a></li>
-      <li><a href="view/products_details.html">New Products</a></li>
+      <li><a href="#!/category">Category</a></li>
+      <li><a href="#!/category_details">New Category</a></li>
+      <li><a href="#!/subcategory">Subcategory</a></li>
+      <li><a href="#!/subcategory_details">New subcategory</a></li>
+      <li><a href="#!/products">Products</a></li>
+      <li><a href="#!/products_details">New Products</a></li>
+      <li><a href="#!/contact">Contact</a></li>
+      <li><a href="#!/contact_details">New Contact</a></li>
     </ul>
   </nav>
   <aside>
     
   </aside>
-  <main>
+  <main ng-view>
     
   </main>
   <article>

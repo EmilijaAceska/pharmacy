@@ -56,4 +56,4 @@ app.config(function ($routeProvider) {
       templateUrl: "view/category.html",
       controller: "myCtrl"
     });
-})
+});
