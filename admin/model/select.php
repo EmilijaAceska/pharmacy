@@ -16,7 +16,8 @@ switch ($table_name) {
     $objSubcategory= new ModelSubcategory();
     $result=$objSubcategory->selectSubcategory();
     foreach($result as $row){
-            $data["records"][]=array("subcategory_title"=>$row["subcategory_title"],"subcategory_img"=>$row["subcategory_img"]);
+            $data["records"][]=array("subcategory_title"=>$row["subcategory_title"],
+                                    "subcategory_img"=>$row["subcategory_img"]);
     }
   break;
   case "products":
@@ -24,9 +25,14 @@ switch ($table_name) {
     $objProduct= new ModelProducts();
     $result=$objProduct->selectProduct();
     foreach($result as $row){
-            $data["records"][]=array("product_id"=>$row["product_id"],"product_name"=>$row["product_name"],"product_description"=>$row["product_description"],
-                                      "product_manufacturer"=>$row["product_manufacturer"],"product_price"=>$row["product_price"],"product_img"=>$row["product_img"]
-                                      "category_title"=>$row["category_title"],"subcategory_title"=>$row["subcategory_title"]);
+            $data["records"][]=array("product_id"=>$row["product_id"],
+                                    "product_name"=>$row["product_name"],
+                                    "product_description"=>$row["product_description"],
+                                    "product_manufacturer"=>$row["product_manufacturer"],
+                                    "product_price"=>$row["product_price"],
+                                    "product_img"=>$row["product_img"],
+                                    "category_title"=>$row["category_title"],
+                                    "subcategory_title"=>$row["subcategory_title"]);
     }
   break;
   case "contact_form":
@@ -34,8 +40,13 @@ switch ($table_name) {
     $objContact= new ModelContact();
     $result=$objContact->selectContact();
     foreach($result as $row){
-            $data["records"][]=array("contact_id"=>$row["contact_id"],"first_name"=>$row["first_name"],"last_name"=>$row["last_name"],
-                                      "address"=>$row["address"],"e_mail"=>$row["e_mail"],"age"=>$row["age"],"message"=>$row["message"]);
+            $data["records"][]=array("contact_id"=>$row["contact_id"],
+                                    "first_name"=>$row["first_name"],
+                                    "last_name"=>$row["last_name"],
+                                    "address"=>$row["address"],
+                                    "e_mail"=>$row["e_mail"],
+                                    "age"=>$row["age"],
+                                    "message"=>$row["message"]);
     }
   break;
 }

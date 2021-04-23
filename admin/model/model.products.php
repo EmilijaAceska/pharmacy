@@ -8,6 +8,7 @@ class ModelProducts extends DB{
   private $product_img="";
   private $category_title="";
   private $subcategory_title="";
+  private $table_name="products";
   private $columns_name="product_name,product_description,product_manufacturer,
                         product_price,product_img,category_title,subcategory_title";
   

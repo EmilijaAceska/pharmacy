@@ -3,6 +3,7 @@ $data = json_decode(file_get_contents("php://input"));
 var_dump($data);
 require_once "../../classes/database.php";
 $table_name=$data[0]->table_name;
+$pk_value=$data[0]->pk_value;
 switch($table_name){
   case "category":
     require_once "model.category.php";

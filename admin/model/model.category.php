@@ -32,7 +32,7 @@ class ModelCategory extends DB{
 
   //UPDATE
   public function updateCategory(){
-    $columns="category_title='$this->category_title',category_img='$this->category_img'";
+    $columns="category_img='$this->category_img'";
     $condition="category_title='$this->category_title'";
     parent::updateRow($this->table_name,$columns,$condition);
   }

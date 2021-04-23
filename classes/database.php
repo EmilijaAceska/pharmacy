@@ -27,7 +27,7 @@ class DB {
 
   //SELECT
   public function selectRow($table_name){
-    query="SELECT * FROM $table_name";
+    $query="SELECT * FROM $table_name";
     $stmt=$this->conn->prepare($query);
     $stmt->execute();
   return $stmt->fetchAll();

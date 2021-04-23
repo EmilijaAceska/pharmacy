@@ -21,7 +21,7 @@ class ModelSubcategory extends DB{
 
   //insert
   public function insertSubcategory(){
-    columns_value="'$this->subcategory_title','$this->subcategory_img'";
+    $columns_value="'$this->subcategory_title','$this->subcategory_img'";
     parent::insertRow($this->table_name,$this->columns_name,$columns_value);
   }
 
