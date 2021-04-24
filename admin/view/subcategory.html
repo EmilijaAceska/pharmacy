@@ -1,1 +1,11 @@
 <h1>Subcategory</h1>
+<table border="1">
+  <tr ng-repeat="subcategories in subcategory">
+    <td>{{subcategories.subcategory_title}}</td>
+    <td>{{subcategories.subcategory_img}}</td>
+    <td><a href="#!subcategory_details/{{$index}}"><i class="fa fa-edit"></i></a></td>
+    <td><button
+        ng-click="function_getId($index);function_deleteRow('subcategory',subcategory[getId].subcategory_title)">delete</button>
+    </td>
+  </tr>
+</table>

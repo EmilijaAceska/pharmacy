@@ -5,16 +5,16 @@ app.config(function ($routeProvider) {
       controller: "myCtrl"
     })
     .when("/category", {
-      templateUrl: "view/category.html",
-      controller: "myCtrl"
+    templateUrl : "view/category.html",
+    controller:"myCtrl"
     })
     .when("/category_details", {
-      templateUrl: "view/category_details.html",
-      controller: "myCtrl"
+    templateUrl : "view/category_details.html",
+    controller:"myCtrl"
     })
     .when("/category_details/:id", {
-      templateUrl: "view/category_details.html",
-      controller: "myCtrl"
+    templateUrl : "view/category_details.html",
+    controller:"myCtrl"
     })
     .when("/subcategory", {
       templateUrl: "view/subcategory.html",

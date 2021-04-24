@@ -103,6 +103,26 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 			postUpdateJSON(categoryJson);
 		}
 	}//end category
+
+	//insert subcategory
+	$scope.function_subcategory_details = function (subcategory_title, subcategory_img, pk_value, action) {
+		var find = 0;
+		angular.forEach($scope.subcategory, function (value, keys) {
+			if ($scope.subcategory[keys].subcategory_title == pk_value) {
+				find = 1;
+				console.log($scope.subcategory[keys].subcategory_title + " ");
+			}
+		});
+		if (find == 0) {
+			var subcategoryJson = [{ "subcategory_title": subcategory_title, "subcategory_img": subcategory_img, "table_name": "subcategory", "action": action }];
+			postJSON(subcategoryJson);
+			console.log(subcategoryJson);
+		} else {
+			var subcategoryJson = [{ "subcategory_title": subcategory_title, "subcategory_img": subcategory_img, "table_name": "subcategory", "action": action }];
+			postUpdateJSON(subcategoryJson);
+			console.log(subcategoryJson);
+		}
+	}
 	
 	//DELETE
 	$scope.function_deleteRow = function (table_name, pk_value) {
@@ -117,9 +137,17 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 			if($scope.products[keys].category_title == pk_value){
 			find = 1;
 		}
-	});
+	});		
+	}
 
-		
+	//delete subcategory
+	$scope.function_deleteRowSubcategory = function (pk_value) {
+		var find = 0;
+		angular.forEach($scope.products, function(value, keys){
+			if($scope.products[keys].subcategory_title == pk_value){
+			find = 1;
+		}
+	});		
 	}
 
 	//function Error

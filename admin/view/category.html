@@ -1,6 +1,7 @@
 <h1>Category</h1>
 <table border="1">
 <tr  ng-repeat="categories in category">
+  <td>{{$index}}</td>
   <td>{{categories.category_title}}</td>
   <td>{{categories.category_img}}</td>
   <td><a href="#!category_details/{{$index}}"><i class="fa fa-edit"></i></a></td>

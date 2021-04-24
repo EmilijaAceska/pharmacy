@@ -10,6 +10,10 @@
             id="category_title" 
             ng-model="category[checkUrl].category_title" 
             required />
+      <input type="hidden" class="form-control" 
+            name="category_title" 
+            id="category_title"
+            ng-model="category[checkUrl].category_title" />
     </div>
     <div class="form-group">
       <label for="category_img">Upload image:</label>
@@ -33,7 +37,7 @@
       <button type="button" class="btn btn-outline-secondary"
               ng-show="checkUrl!==undefined"
               ng-click="(myForm.category_title.$valid && myForm.category_img.$valid) 
-              ? function_category_details(category[checkUrl].category_title,category[checkUrl].category_img, 'update') 
+              ? function_category_details(category[checkUrl].category_title,category[checkUrl].category_img,category[checkUrl].category_title, 'update') 
               : function_error()">UPDATE</button>
     </div>
   </form>

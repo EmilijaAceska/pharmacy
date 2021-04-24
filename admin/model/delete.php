@@ -13,8 +13,8 @@ switch ($table_name){
   case "subcategory":
     require_once "model.subcategory.php";
     $objSubcategory= new ModelSubcategory();
-    $objSubcategory->setSubcategory_title($pk_value);
-    $objSubcategory->delteSubcategory();
+    $objSubcategory->setSubcategoryTitle($pk_value);
+    $objSubcategory->deleteSubcategory();
   break;
   case "products":
     require_once "model.products.php";
