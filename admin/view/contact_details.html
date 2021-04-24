@@ -1,1 +1,77 @@
 <h1>Contact_details</h1>
+<form name="myForm">
+
+  <div class="form-group">
+    <label for="first_name">First Name:</label>
+    <div ng-show="myForm.first_name.$invalid"></div>
+    <input type="text" class="form-control" 
+          name="first_name" 
+          id="first_name"
+          ng-model="contact_form[checkUrl].first_name" 
+          required />
+    <input type="hidden" class="form-control" 
+          name="contact_id" 
+          id="contact_id"
+          ng-model="contact_form[checkUrl].contact_id" />
+  </div>
+  <div class="form-group">
+    <label for="last_name">Last Name:</label>
+    <div ng-show="myForm.last_name.$invalid"></div>
+    <input type="text" class="form-control" 
+          name="last_name" 
+          id="last_name"
+          ng-model="contact_form[checkUrl].last_name" 
+          required />
+  </div>
+  <div class="form-group">
+    <label for="address">Insert your address:</label>
+    <div ng-show="myForm.address.$invalid"></div>
+    <input type="text" class="form-control" 
+          name="address" 
+          id="address"
+          ng-model="contact_form[checkUrl].address" 
+          required />
+  </div>
+  <div class="form-group">
+    <label for="e_mail">Insert your e-mail address</label>
+    <div ng-show="myForm.e_mail.$invalid"></div>
+    <input type="text" class="form-control" 
+          name="e_mail" 
+          id="e_mail" 
+          ng-model="contact_form[checkUrl].e_mail"
+          required />
+  </div>
+  <div class="form-group">
+    <label for="age">Age</label>
+    <div ng-show="myForm.age.$invalid"></div>
+    <input type="text" class="form-control" 
+          name="age" 
+          id="age" 
+          ng-model="contact_form[checkUrl].age"
+          required />
+  </div>
+  <div class="form-group">
+    <label for="message">Your message:</label>
+    <div ng-show="myForm.message.$invalid"></div>
+    <textarea class="form-control" 
+              rows="6" 
+              name="message" 
+              id="message" 
+              ng-model="contact_form[checkUrl].message"
+              maxlength="255" 
+              required></textarea>
+  </div>
+
+  <div class="form-group">
+    <button ng-show="checkUrl===undefined" class="btn btn-primary"
+            ng-click="(myForm.first_name.$valid && myForm.last_name.$valid && myForm.message.$valid 
+                    && myForm.address.$valid && myForm.e_mail.$valid && myForm.age.$valid) 
+                    ? function_contact_details(contact_form[checkUrl].first_name,contact_form[checkUrl].last_name,
+                    contact_form[checkUrl].address,contact_form[checkUrl].e_mail,contact_form[checkUrl].age,
+                    contact_form[checkUrl].message,contact_form[checkUrl].contact_id) 
+                    : function_error()">
+      SEND
+    </button>
+  </div>
+
+</form>

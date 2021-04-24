@@ -1,1 +1,20 @@
-<h1>Contact</h1>
+<h1>Contact Form</h1>
+<div>
+  <table>
+    <tr ng-repeat="messages in contact_form">
+      <!-- <td>{{$index}}</td> -->
+      <td>{{messages.contact_id}}</td>
+      <td>{{messages.first_name}}</td>
+      <td>{{messages.last_name}}</td>
+      <td>{{messages.address}}</td>
+      <td>{{messages.e_mail}}</td>
+      <td>{{messages.age}}</td>
+      <td>{{messages.message}}</td>
+      <td><button type="button" title="DELETE" class="btn btn-danger" data-toggle="modal" data-target="#myModal"
+          ng-click="function_getId($index);function_deleteRow('contact_form',contact_form[getId].contact_id)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>

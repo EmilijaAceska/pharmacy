@@ -138,6 +138,16 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 			console.log(productsJson);
 		}
 	}
+
+	//insert contact_form
+	$scope.function_contact_details = function (first_name, last_name, address, e_mail, age, message, pk_value) {
+		var contactJson = [{
+			"first_name": first_name, "last_name": last_name, "address": address, "e_mail": e_mail, "age": age,
+			"message":message, "pk_value":pk_value, "table_name":"contact_form"
+		}];
+		postJSON(contactJson);
+		console.log(contactJson);
+	}
 	
 	//DELETE
 	$scope.function_deleteRow = function (table_name, pk_value) {
