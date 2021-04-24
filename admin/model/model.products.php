@@ -78,7 +78,7 @@ class ModelProducts extends DB{
 
   //delete
   public function deleteProduct(){
-    parent::deleteRowStr($this->table_name,"product_id",$this->contact_id);
+    parent::deleteRowStr($this->table_name,"product_id",$this->product_id);
   }
 
   //update

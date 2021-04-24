@@ -49,10 +49,10 @@ class DB {
 
   //UPDATE
   public function updateRow($table_name,$columns,$condition){
-    $query="UPDATE $table_name SET $columns WHERE $condition";
-    //use exec() because no results are returned
-    $this->conn->exec($query);
-  }//end updateRow
+  $query="UPDATE $table_name SET $columns WHERE $condition";
+  // use exec() because no results are returned
+  $this->conn->exec($query);
+}//end updateRow
   
 }//end DB
 ?>

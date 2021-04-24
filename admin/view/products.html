@@ -1,1 +1,14 @@
 <h1>Products</h1>
+<table border="">
+  <tr ng-repeat="product in products">
+    <td>{{product.product_name}}</td>
+    <td>{{product.product_description}}</td>
+    <td>{{product.product_manufacturer}}</td>
+    <td>{{product.product_price}}</td>
+    <td>{{product.product_img}}</td>
+    <td>{{product.category_title}}</td>
+    <td>{{product.subcategory_title}}</td>
+    <td><a href="#!products_details/{{$index}}"><i class="fa fa-edit"></i></a></td>
+    <td><button ng-click="function_getId($index);function_deleteRow('products',products[getId].product_id)">delete</button></td>
+  </tr>
+</table>

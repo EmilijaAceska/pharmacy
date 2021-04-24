@@ -118,9 +118,24 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 			postJSON(subcategoryJson);
 			console.log(subcategoryJson);
 		} else {
-			var subcategoryJson = [{ "subcategory_title": subcategory_title, "subcategory_img": subcategory_img, "table_name": "subcategory", "action": action }];
+			var subcategoryJson = [{ "subcategory_title": subcategory_title, "subcategory_img": subcategory_img,"pk_value":pk_value, "table_name": "subcategory", "action": action }];
 			postUpdateJSON(subcategoryJson);
 			console.log(subcategoryJson);
+		}
+	}
+
+	//insert products
+	$scope.function_products_details = function (product_name, product_description, product_manufacturer, product_price, product_img, category_title, subcategory_title, pk_value,action) {
+		var productsJson = [{
+			"product_name": product_name, "product_description": product_description, "product_manufacturer": product_manufacturer, "product_price": product_price,
+			"product_img": product_img, "category_title": category_title, "subcategory_title": subcategory_title,"pk_value":pk_value, "table_name": "products", "action": action
+		}];
+		if (action == 'insert') {
+			postJSON(productsJson);
+			console.log(productsJson);
+		} else {
+			postUpdateJSON(productsJson);
+			console.log(productsJson);
 		}
 	}
 	
@@ -151,7 +166,7 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 	}
 
 	//function Error
-	$scope.function_error = function () {
+	$scope.function_error = function() {
 		console.log(error);
 	}
 

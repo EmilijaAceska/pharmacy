@@ -1,1 +1,109 @@
-<h1>Products_details</h1>
+<h1>ADD NEW PRODUCTS</h1>
+<form name="myForm">
+  <div class="form-group">
+    <label for="product_name">Insert product name</label>
+    <div ng-show="myForm.product_name.$invalid"></div>
+    <input type="text" class="form-control"
+          name="product_name"
+          id="product_name"
+          ng-model="products[checkUrl].product_name"
+          required />
+    <input type="hidden"
+          name="product_id"
+          id="product_id"
+          ng-model="products[checkUrl].product_id">
+  </div>
+  <div class="form-group">
+    <label for="product_description">Insert description for the product</label>
+    <div ng-show="myForm.product_description.$invalid"></div>
+    <input type="text" class="form-control"
+          name="product_description"
+          id="product_description"
+          ng-model="products[checkUrl].product_description"
+          required />
+  </div>
+  <div class="form-group">
+    <label for="product_manufacturer">Insert the manufacturer</label>
+    <div ng-show="myForm.product_manufacturer.$invalid"></div>
+    <input type="text" class="form-control"
+          name="product_manufacturer"
+          id="product_manufacturer"
+          ng-model="products[checkUrl].product_manufacturer"
+          required />
+  </div>
+  <div class="form-group">
+    <label for="product_price">Insert the price of the product</label>
+    <div ng-show="myForm.product_price.$invalid"></div>
+    <input type="text" class="form-control"
+          name="product_price"
+          id="product_price"
+          ng-model="products[checkUrl].product_price"
+          required />
+  </div>
+  <div class="form-group">
+    <label for="product_img">Upload image of the product</label>
+    <div ng-show="myForm.product_img.$invalid"></div>
+    <input type="text" class="form-control"
+          name="product_img"
+          id="product_img"
+          ng-model="products[checkUrl].product_img"
+          required />
+  </div>
+  <div class="form-group">
+    <label for="category_title">Choose the category of the product</label>
+    <div ng-show="myForm.category_title.$invalid"></div>
+    <select class="form-control"
+            name="category_title" 
+            id="category_title"
+            ng-model="products[checkUrl].category_title">
+            <option value=""></option>
+            <option ng-repeat="categories in category" value="{{categories.category_title}}">
+              {{categories.category_title}}
+            </option>
+    </select>
+  </div>
+  <div class="from-group">
+    <label for="subcategory_title">Choose the subcategory of the product</label>
+    <div ng-show="myForm.subcategory_title.$invalid"></div>
+    <select class="form-control"
+            name="subcategory_title" 
+            id="subcategory_title"
+            ng-model="products[checkUrl].subcategory_title">
+          <option value=""></option>
+          <option ng-repeat="subcategories in subcategory" value="{{subcategories.subcategory_title}}">
+            {{subcategories.subcategory_title}}
+          </option>
+    </select>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-outline-secondary"
+            ng-show="checkUrl===undefined"
+            ng-click="(myForm.product_name.$valid && myForm.product_description.$valid
+                      && myForm.product_manufacturer.$valid && myForm.product_price.$valid
+                      && myForm.product_img.$valid && myForm.category_title.$valid
+                      && myForm.subcategory_title.$valid)
+                      ? function_products_details(products[checkUrl].product_name,
+                      products[checkUrl].product_description, products[checkUrl].product_manufacturer,
+                      products[checkUrl].product_price,products[checkUrl].product_img,
+                      products[checkUrl].category_title,products[checkUrl].subcategory_title,
+                      products[checkUrl].product_id, 'insert')
+                      : function_error()">
+        INSERT
+      </button>
+      <button class="btn btn-outline-secondary" 
+              ng-show="checkUrl!==undefined" 
+              ng-click="(myForm.product_name.$valid && myForm.product_description.$valid
+                        && myForm.product_manufacturer.$valid && myForm.product_price.$valid
+                        && myForm.product_img.$valid && myForm.category_title.$valid
+                        && myForm.subcategory_title.$valid)
+                        ? function_products_details(products[checkUrl].product_name,
+                        products[checkUrl].product_description, products[checkUrl].product_manufacturer,
+                        products[checkUrl].product_price,products[checkUrl].product_img,
+                        products[checkUrl].category_title,products[checkUrl].subcategory_title,
+                        products[checkUrl].product_id, 'UPDATE')
+                        : function_error()">
+        UPDATE
+      </button>
+  </div>
+
+</form>
