@@ -1,4 +1,4 @@
-app.config(function ($routeProvider) {
+app.config(function($routeProvider) {
   $routeProvider
     .when("/index", {
       templateUrl: "view/index.html",
