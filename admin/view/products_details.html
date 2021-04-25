@@ -1,4 +1,16 @@
 <h1>ADD NEW PRODUCTS</h1>
+<div class="alert alert-success" ng-show="successAlert">
+  You inserted new product successfully!
+</div>
+<div class="alert alert-danger" ng-show="dangerAlert">
+  Please fill in the form correctly!
+</div>
+<div class="alert alert-info" ng-show="infoAlert">
+  The product already exist!
+</div>
+<div class="alert alert-info" ng-show="updateAlert">
+  You updated product successfully!
+</div>
 <form name="myForm">
   <div class="form-group">
     <label for="product_name">Insert product name</label>

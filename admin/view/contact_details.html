@@ -1,6 +1,11 @@
 <h1>Contact_details</h1>
+<div class="alert alert-success" ng-show="successAlert">
+  You send the message successfully!
+</div>
+<div class="alert alert-danger" ng-show="dangerAlert">
+  Please fill in the form correctly!
+</div>
 <form name="myForm">
-
   <div class="form-group">
     <label for="first_name">First Name:</label>
     <div ng-show="myForm.first_name.$invalid"></div>

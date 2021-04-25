@@ -1,4 +1,16 @@
   <form name="myForm">
+  <div class="alert alert-success" ng-show="successAlert">
+    You inserted new category successfully!
+  </div>
+  <div class="alert alert-danger" ng-show="dangerAlert">
+    Please fill in the form correctly!
+  </div>
+  <div class="alert alert-info" ng-show="infoAlert">
+    These category already exist!
+  </div>
+  <div class="alert alert-info" ng-show="updateAlert">
+    You updated the category successfully!
+  </div>
     <div class="form-group">
       <label for="category_title">Category title:</label>
       <div ng-show="myForm.category_title.$invalid"></div>

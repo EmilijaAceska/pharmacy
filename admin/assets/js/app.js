@@ -4,6 +4,11 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 	//variables
 	$scope.firstName = "Emilija";
 	$scope.surname = "Aceska";
+	$scope.successAlert = false;
+	$scope.dangerAlert = false;
+	$scope.infoAlert = false;
+	$scope.deleteAlert = false;
+	$scope.updateAlert = false;
 	$scope.getId = 0;
 	$scope.checkUrl = $routeParams.id;
 
@@ -90,17 +95,23 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 			// console.log($scope.category[keys].category_title+" ");
 			if ($scope.category[keys].category_title == category_title) {
 				find = 1;
-				console.log($scope.category[keys].category_title + " ");
+				// console.log($scope.category[keys].category_title + " ");
+				$scope.infoAlert = true;
 			}
 		});
 		if (find == 0) {
 			var categoryJson = [{ "category_title": category_title, "category_img": category_img, "table_name": "category", "action": action }];
-			console.log(categoryJson);
+			// console.log(categoryJson);
 			postJSON(categoryJson);
+			$scope.dangerAlert = false;
+			$scope.infoAlert = false;
+			$scope.successAlert = true;
 		} else {
 			var categoryJson = [{ "category_title": category_title, "category_img": category_img, "pk_value": pk_value, "table_name": "category", "action": action }];
-			console.log(categoryJson);
+			// console.log(categoryJson);
 			postUpdateJSON(categoryJson);
+			$scope.infoAlert = false;
+			$scope.updateAlert = true;
 		}
 	}//end category
 
@@ -110,17 +121,23 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 		angular.forEach($scope.subcategory, function (value, keys) {
 			if ($scope.subcategory[keys].subcategory_title == subcategory_title) {
 				find = 1;
-				console.log($scope.subcategory[keys].subcategory_title + " ");
+				// console.log($scope.subcategory[keys].subcategory_title + " ");
+				$scope.infoAlert = true;
 			}
 		});
 		if (find == 0) {
 			var subcategoryJson = [{ "subcategory_title": subcategory_title, "subcategory_img": subcategory_img, "table_name": "subcategory", "action": action }];
 			postJSON(subcategoryJson);
-			console.log(subcategoryJson);
+			// console.log(subcategoryJson);
+			$scope.dangerAlert = false;
+			$scope.infoAlert = false;
+			$scope.successAlert = true;
 		} else {
 			var subcategoryJson = [{ "subcategory_title": subcategory_title, "subcategory_img": subcategory_img,"pk_value":pk_value, "table_name": "subcategory", "action": action }];
 			postUpdateJSON(subcategoryJson);
-			console.log(subcategoryJson);
+			// console.log(subcategoryJson);
+			$scope.infoAlert = false;
+			$scope.updateAlert = true;
 		}
 	}
 
@@ -132,10 +149,15 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 		}];
 		if (action == 'insert') {
 			postJSON(productsJson);
-			console.log(productsJson);
+			// console.log(productsJson);
+			$scope.dangerAlert = false;
+			$scope.infoAlert = false;
+			$scope.successAlert = true;
 		} else {
 			postUpdateJSON(productsJson);
-			console.log(productsJson);
+			// console.log(productsJson);
+			$scope.infoAlert = false;
+			$scope.updateAlert = true;
 		}
 	}
 
@@ -146,7 +168,9 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 			"message":message, "pk_value":pk_value, "table_name":"contact_form"
 		}];
 		postJSON(contactJson);
-		console.log(contactJson);
+		// console.log(contactJson);
+		$scope.dangerAlert = false;
+		$scope.successAlert = true;
 	}
 	
 	//DELETE
