@@ -87,6 +87,8 @@ class ModelProducts extends DB{
               product_manufacturer='$this->product_manufacturer',product_price='$this->product_price',
               product_img='$this->product_img',category_title='$this->category_title',
               subcategory_title='$this->subcategory_title'";
+    $condition="product_id='$this->product_id'";
+    parent::updateRow($this->table_name,$columns,$condition);
   }
 }
 ?>

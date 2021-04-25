@@ -88,7 +88,7 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 		var find = 0;
 		angular.forEach($scope.category, function (value, keys) {
 			// console.log($scope.category[keys].category_title+" ");
-			if ($scope.category[keys].category_title == pk_value) {
+			if ($scope.category[keys].category_title == category_title) {
 				find = 1;
 				console.log($scope.category[keys].category_title + " ");
 			}
@@ -108,7 +108,7 @@ app.controller('myCtrl', function ($scope, $http, $routeParams) {
 	$scope.function_subcategory_details = function (subcategory_title, subcategory_img, pk_value, action) {
 		var find = 0;
 		angular.forEach($scope.subcategory, function (value, keys) {
-			if ($scope.subcategory[keys].subcategory_title == pk_value) {
+			if ($scope.subcategory[keys].subcategory_title == subcategory_title) {
 				find = 1;
 				console.log($scope.subcategory[keys].subcategory_title + " ");
 			}

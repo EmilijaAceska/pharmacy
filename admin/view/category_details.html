@@ -2,10 +2,9 @@
     <div class="form-group">
       <label for="category_title">Category title:</label>
       <div ng-show="myForm.category_title.$invalid"></div>
-      <!-- <span ng-show="checkUrl!==undefined">{{category[checkUrl].category_title}}</span> -->
+      <span ng-show="checkUrl!==undefined">{{category[checkUrl].category_title}}</span>
       <input ng-show="checkUrl===undefined" 
             type="text" class="form-control" 
-            placeholder="insert category title"
             name="category_title" 
             id="category_title" 
             ng-model="category[checkUrl].category_title" 
@@ -18,9 +17,7 @@
     <div class="form-group">
       <label for="category_img">Upload image:</label>
       <div ng-show="myForm.category_img.$invalid"></div>
-      <input ng-show="checkUrl===undefined"
-            type="text" class="form-control" 
-            placeholder="upload image" 
+      <input type="text" class="form-control" 
             name="category_img" 
             id="category_img"
             ng-model="category[checkUrl].category_img" 
@@ -30,14 +27,16 @@
       <button type="button" class="btn btn-outline-secondary"
               ng-show="checkUrl===undefined"
               ng-click="(myForm.category_title.$valid && myForm.category_img.$valid) 
-              ? function_category_details(category[checkUrl].category_title,category[checkUrl].category_img, 'insert') 
+              ? function_category_details(category[checkUrl].category_title,
+              category[checkUrl].category_img, 'insert') 
               : function_error()">INSERT</button>
     </div>
     <div class="input-group justify-content-center">
       <button type="button" class="btn btn-outline-secondary"
               ng-show="checkUrl!==undefined"
               ng-click="(myForm.category_title.$valid && myForm.category_img.$valid) 
-              ? function_category_details(category[checkUrl].category_title,category[checkUrl].category_img,category[checkUrl].category_title, 'update') 
+              ? function_category_details(category[checkUrl].category_title,
+              category[checkUrl].category_img, 'update') 
               : function_error()">UPDATE</button>
     </div>
   </form>
